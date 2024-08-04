@@ -2,3 +2,16 @@ fos_elastica:
     clients:
         default: { host: elasticsearch, port: 9200 }
     indexes:
+        course:
+            persistence:
+                driver: orm
+                model: App\Entity\Course
+                provider: ~
+                finder: ~
+            properties:
+                title: ~
+                category:
+                    type: object
+                    id : ~
+                createdAt:
+                    type: date
