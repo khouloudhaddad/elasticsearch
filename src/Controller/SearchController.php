@@ -31,7 +31,9 @@ class SearchController extends AbstractController
 
         if($form->isSubmitted() && $form->isValid()){
             /** @var SearchModel $data */
-            $data * $form->getData();
+            $data = new SearchModel($form->getData()['query'], $form->getData()['category'], $form->getData()['createdThisMonth']);
+            //$data = $form->getData();
+
             $page = $request->query->getInt('page', 1);
             $boolQuery = new BoolQuery();
 

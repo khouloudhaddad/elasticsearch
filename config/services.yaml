@@ -12,7 +12,7 @@ services:
             - '../src/Entity/'
             - '../src/Kernel.php'
 
-    App\Controllers\SearchController:
+    App\Controller\SearchController:
         tags:
             - controller.service_arguments
         public: true
